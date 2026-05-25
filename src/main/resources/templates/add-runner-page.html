@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Runner</title>
+</head>
+<body>
+
+<h1>Add Runner</h1>
+
+<form th:action="@{/runner/add}" th:object="${runner}" method="post">
+
+    Name:
+    <input type="text" th:field="*{name}">
+    <br><br>
+
+    Surname:
+    <input type="text" th:field="*{surname}">
+    <br><br>
+
+    <button type="submit">Save Runner</button>
+
+</form>
+
+</body>
+</html>

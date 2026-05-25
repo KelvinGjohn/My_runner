@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Runners</title>
+</head>
+<body>
+
+<h1>Runner List</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+
+    <tr th:each="runner : ${runners}">
+        <td th:text="${runner.idr}"></td>
+        <td th:text="${runner.name}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>

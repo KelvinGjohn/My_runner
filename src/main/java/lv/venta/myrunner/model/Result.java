@@ -1,4 +1,4 @@
-package com.example.myrunner.model;
+package lv.venta.myrunner.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

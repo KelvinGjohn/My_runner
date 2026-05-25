@@ -1,4 +1,4 @@
-package com.example.myrunner.model;
+package lv.venta.myrunner.model;
 
 import java.util.ArrayList;
 import java.util.Collection;

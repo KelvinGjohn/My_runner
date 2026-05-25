@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Runner</title>
+</head>
+<body>
+
+<h1>Update Runner</h1>
+
+<form th:action="@{/runner/update/{id}(id=${runner.id})}"
+      th:object="${runner}"
+      method="post">
+
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" />
+
+    <br><br>
+
+    <button type="submit">Update Runner</button>
+
+</form>
+
+<br>
+
+<a th:href="@{/runner/all}">
+    Back To All Runners
+</a>
+
+</body>
+</html>

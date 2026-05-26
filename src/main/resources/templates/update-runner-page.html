@@ -7,14 +7,17 @@
 
 <h1>Update Runner</h1>
 
-<form th:action="@{/runner/update/{id}(id=${runner.id})}"
-      th:object="${runner}"
+<form th:action="@{/runner/update/{idru}(idru=${runner.idru})}" 
+      th:object="${runner}" 
       method="post">
 
-    <label>Name:</label>
-    <input type="text" th:field="*{name}" />
+    <input type="hidden" th:field="*{idru}">
 
-    <br><br>
+    Name:
+    <input type="text" th:field="*{name}">
+    
+    Surname:
+    <input type="text" th:field="*{surname}">
 
     <button type="submit">Update Runner</button>
 

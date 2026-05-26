@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -67,22 +68,25 @@ public class RunnerController {
         return "redirect:/runner/all";
     }
     
-    @GetMapping("/update/{id}")
-    public String updateRunnerPage(@PathVariable Integer id, Model model) {
+    @GetMapping("/update/{idru}")
+    public String updateRunnerPage(@PathVariable("idru") Integer idru, Model model) {
 
-        Runner runner = runnerRepo.findById(id).orElse(null);
+        Runner runner = runnerRepo.findById(idru).orElse(null);
 
         model.addAttribute("runner", runner);
 
         return "update-runner-page";
     }
-    
-    @PostMapping("/update/{id}")
-    public String updateRunner(@PathVariable Integer id, Runner runner) {
 
-        Runner existingRunner = runnerRepo.findById(id).orElse(null);
+
+    @PostMapping("/update/{idru}")
+    public String updateRunner(@PathVariable("idru") Integer idru,
+                               @ModelAttribute Runner runner) {
+
+        Runner existingRunner = runnerRepo.findById(idru).orElse(null);
 
         existingRunner.setName(runner.getName());
+        existingRunner.setSurname(runner.getSurname());
 
         runnerRepo.save(existingRunner);
 
